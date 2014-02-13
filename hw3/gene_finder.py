@@ -227,13 +227,13 @@ def longest_ORF_noncoding(dna, num_trials):
         num_trials: the number of random shuffles
         returns: the maximum length longest ORF """
     
-    maxORFs = []    #Establishes a blank list to hold the 
+    maxORFs = []    #Establishes a blank list to hold the ORFs calculated in the function
     
-    for i in range(0,num_trials):
-        dna = list(dna)
-        shuffle(dna)
+    for i in range(0,num_trials): #range set to loop number of trials
+        dna = list(dna) 
+        shuffle(dna) #Shuffles the listed DNA
         dna = collapse(dna)
-        maxORFs.append(longest_ORF(dna))
+        maxORFs.append(longest_ORF(dna)) #Adds the longest ORFs of the shuffled DNA to the maxORFs list
     
     return len(max(maxORFs, key = len))
         
@@ -250,13 +250,13 @@ def gene_finder(dna, threshold):
         returns: a list of all amino acid sequences whose ORFs meet the minimum
                  length specified.
     """
-    totalaminoacids = []
+    totalaminoacids = [] #Empty list for amino acids generated later
 
-    longvectors = find_all_ORFs_both_strands(dna)
+    longvectors = find_all_ORFs_both_strands(dna) #sets elements i to be the ORFs calculated by the previous function
     for i in longvectors:
-        if len(i) > threshold:
+        if len(i) > threshold: #if the length of ORF is greater than the threshold, lets pass
             aminos = coding_strand_to_AA(i)
-            totalaminoacids = totalaminoacids + [aminos]
+            totalaminoacids = totalaminoacids + [aminos] #converts codon sequence to amino acid and dumps it into totalaminoacids
     return totalaminoacids
 
 
