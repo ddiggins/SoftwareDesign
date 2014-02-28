@@ -14,6 +14,10 @@ import Image
 from math import *
 
 
+## SS: Great job in general!! I would say, unless your '#' comments help you understand what's going
+##     on, you probably don't need as much as you've put in this assignment. If you have a good 
+##     doc string and variable names, the amount of commenting you need to do is not much. 
+
 def build_random_function(min_depth, max_depth):
     """Takes a minimum and maximum nesting depth and returns a randomly
     generated function comprised of sin_pi, cos_pi, prod, sqr, avg, x, and y"""
@@ -43,8 +47,13 @@ def build_random_function(min_depth, max_depth):
     
     return lists #returns the big function list
 
+
+## SS: It might be a good idea to put all of your 'execution' code in a main function at the end
+##     of this file
 builtfunc = build_random_function(3, 7)
 
+
+## SS: Passed my tests :)
 def evaluate_random_function(builtfunction, x, y):
     """Evaluates the random function generated in build_random_function.
     f = the input function from build_random_function
@@ -78,6 +87,7 @@ def evaluate_random_function(builtfunction, x, y):
     
 evalfunc = evaluate_random_function(builtfunc, -.02435, .93425)
 
+## SS: Passed my tests :)
 def remap_interval(val, input_interval_start, input_interval_end, output_interval_start, output_interval_end):
     """ Maps the input value that is in the interval [input_interval_start, input_interval_end]
         to the output interval [output_interval_start, output_interval_end].  The mapping
@@ -131,7 +141,7 @@ def draw_picture():
                 
                 pixels[xpixel, ypixel] = (redchannel, bluechannel, greenchannel) #Plots tuple for every pixel
     
-    im.save("Image9.png") #Ka-save!
+    im.save("Image10.png") #Ka-save!
 
 draw_picture() #I am sorry that my comments got less serious as I got more tired
     
